@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h2>{{hj.name | uppercase}} Details</h2>
+<div><span><b>ID:</b> </span>{{hj.age }}</div>
+<div><span><b>NAME:</b></span>{{hj.name}}</div>
+
+<div>
+    <label>Enter Name:
+      <input [(ngModel)]="hj.name" placeholder="Name">
+    </label>
+  </div>
+
+  <h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<app-hajaj-detail [hero]="selectedHero"></app-hajaj-detail>
